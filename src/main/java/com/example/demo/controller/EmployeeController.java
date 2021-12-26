@@ -61,7 +61,7 @@ public class EmployeeController {
         // delete employee from DB
         employeeService.deleteEmployee(id);
 
-        return new ResponseEntity<String>("Employee deleted successfully check it!.", HttpStatus.OK);
+        return new ResponseEntity<String>("Employee deleted successfully !.", HttpStatus.OK);
     }
 
 }
