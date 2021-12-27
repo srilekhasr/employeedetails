@@ -60,7 +60,7 @@ public class EmployeeController {
 
         employeeService.deleteEmployee(id);
 
-        return new ResponseEntity<String>("Employee deleted successfully !.", HttpStatus.OK);
+        return new ResponseEntity<String>("Employee deleted successfully check it!.", HttpStatus.OK);
     }
 
 }
