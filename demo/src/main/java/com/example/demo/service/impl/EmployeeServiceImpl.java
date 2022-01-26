@@ -55,7 +55,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void deleteEmployee(long id) {
+    public void deleteEmployeeById(long id) {
 
         // check whether a employee exist in a DB or not
         employeeRepository.findById(id)

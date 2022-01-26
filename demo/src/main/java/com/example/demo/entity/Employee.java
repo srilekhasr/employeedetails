@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "employees")
@@ -21,24 +23,32 @@ public class Employee implements Serializable {
     private long id;
 
     @Column(name = "first_name", nullable = false)
+    @NotEmpty(message = "Employee name cannot be empty.")
+    @Size(min = 5, max = 250)
     private String firstName;
 
     @Column(name = "last_name")
+    @NotEmpty(message = "Employee name cannot be empty.")
+    @Size(min = 5, max = 250)
     private String lastName;
 
     @Column(name = "skills")
-    private String skills[];
+    @NotEmpty(message = "Employee skills cannot be empty.")
+    @Size(min = 5, max = 250)
+    private String skills;
 
     @Column(name = "email")
+    @NotEmpty(message = "Employee email cannot be empty.")
     private String email;
 
     @Column(name = "doj")
-    private LocalDate doj;
+    @NotNull(message = "Employee doj cannot be null.")
+    private String doj;
 
     public Employee() {
     }
 
-    public Employee(long id, String firstName, String lastName, String[] skills, String email, LocalDate doj) {
+    public Employee(long id, String firstName, String lastName, String skills, String email, String doj) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -75,11 +85,11 @@ public class Employee implements Serializable {
         this.lastName = lastName;
     }
 
-    public String[] getSkills() {
+    public String getSkills() {
         return skills;
     }
 
-    public void setSkills(String[] skills) {
+    public void setSkills(String skills) {
         this.skills = skills;
     }
 
@@ -91,11 +101,11 @@ public class Employee implements Serializable {
         this.email = email;
     }
 
-    public LocalDate getDoj() {
+    public String getDoj() {
         return doj;
     }
 
-    public void setDoj(LocalDate doj) {
+    public void setDoj(String doj) {
         this.doj = doj;
     }
 
