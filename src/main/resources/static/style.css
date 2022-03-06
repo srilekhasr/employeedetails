@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* height: 1500px; */
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimage {
+  /* The image used */
+  background-image: url("employee.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+span {
+  color: red;
+  font-style: italic;
+}
